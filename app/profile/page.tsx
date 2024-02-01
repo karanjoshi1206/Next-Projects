@@ -23,9 +23,9 @@ const Page = () => {
         <Input onSubmit={(name: string | null) => handleSubmit(name || "")} handleRemove={handleRemove} />
       </div>
       <ul className=" border-2 border-t-0 ">
-        {suggestions?.map((suggestion: string) => {
+        {suggestions?.map((suggestion: string,index:number) => {
           return (
-            <li onClick={() => handleSubmit(suggestion)} className="bg-red-200 cursor-pointer m-2 p-1">
+            <li key={index} onClick={() => handleSubmit(suggestion)} className="bg-red-200 cursor-pointer m-2 p-1">
               {suggestion}
             </li>
           );
